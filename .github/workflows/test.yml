@@ -1,0 +1,31 @@
+name: Run Tests
+
+# いつ実行するか：mainへのPush時と、PR作成時
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # どのOSで動かすか（通常はubuntu-latestでOK）
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. リポジトリのコードをチェックアウト（持ってくる）
+    - uses: actions/checkout@v4
+    
+    # 2. Node.jsのセットアップ
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    # 3. 依存ライブラリのインストール
+    - name: Install dependencies
+      run: npm install
+      
+    # 4. テストの実行
+    - name: Run test
+      run: npm test
