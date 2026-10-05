@@ -1,0 +1,5 @@
+# データベース関連は @db-team の承認が必須
+/db/ @db-team
+
+# 全てのJSファイルは @frontend-lead が見る
+*.js @frontend-lead
