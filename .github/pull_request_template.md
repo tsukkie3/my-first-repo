@@ -1,5 +1,5 @@
 ## 概要
-Closes/Fixes # 
+Fixes # 
 
 ## 変更内容
 
